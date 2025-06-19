@@ -1,4 +1,4 @@
-active development. tests to be added.
+under development. tests to be added.
 
 # Moore Search <img src = "https://img.shields.io/github/actions/workflow/status/hhf112/moore-search/c-cpp.yml" alt="build status">
 A header only implementation of parallelized Boyre Moore exact string searching algorithm. compatible with C++17.
