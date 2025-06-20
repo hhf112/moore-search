@@ -5,6 +5,7 @@ A header only implementation of parallelized Boyre Moore exact string searching 
 
 # Benchmarks
 to be added.
+~38% faster than single threaded Boyre Moore for now.
 
 # Test run 
 1. clone the repo and `cd` into it
