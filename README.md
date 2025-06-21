@@ -84,7 +84,7 @@ Return
 success    beg translated by number of matches appended on success
 fail       {}
 ```
-appends all matches found into container iterated by beg until specified matches are found or eof encountered
+Runs `search` on every chunk. Appends all matches found into container iterated by beg until specified matches are found or eof encountered
 #### Notes
 May return repeated indexes due to overlapped chunks to avoid search misses
 
@@ -110,7 +110,7 @@ Return
 success   beg translated by number of matches appended on success
 fail      {}
 ```
-appends all matches found into container iterated by beg until specified matches are found or eof encountered
+Runs `parallelSearch` on every chunk. Appends all matches found into container iterated by beg until specified matches are found or eof encountered
 #### Notes
 1. May return unordered indexes as total matches are counted by threads running all over the chunk
 2. May return repeated indexes due to local search space overlapping of each thread and overlapped chunks to avoid misses
@@ -138,7 +138,8 @@ matches        maximum number of matches to look for [optional]
 
 Return          number of matches
 ```
-appends all matches found into container iterated by beg until specified matches are found or eof encountered
+Performs classical boyre moore seach and determines shifts by the maximum of good suffix heuristic 
+and bad character heuristic. Appends all matches found into container iterated by beg until specified matches are found or eof encountered
 
 ### parallelSearch: threaded search
 ```cpp
@@ -163,7 +164,8 @@ Return
 success         beg translated by number of matches found
 fail            {}
 ```
-appends all matches found into container iterated by beg until specified matches are found or eof encountered
+Allocates partitions of the `text` to `search` threads. Appends all matches found first into local containers for threads then
+ensembles into container iterated by beg until specified matches are found or eof encountered
 
 ### preprocess_pattern
 ```cpp
