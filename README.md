@@ -139,7 +139,8 @@ matches        maximum number of matches to look for [optional]
 Return          number of matches
 ```
 Performs classical boyre moore seach and determines shifts by the maximum of good suffix heuristic 
-and bad character heuristic. Appends all matches found into container iterated by beg until specified matches are found or eof encountered
+and bad character heuristic. Appends all matches found into container iterated by beg until specified matches are found or eof encountered. An atomic counter
+is polled between iterations for checking search count.
 
 ### parallelSearch: threaded search
 ```cpp
@@ -165,7 +166,7 @@ success         beg translated by number of matches found
 fail            {}
 ```
 Allocates partitions of the `text` to `search` threads. Appends all matches found first into local containers for threads then
-ensembles into container iterated by beg until specified matches are found or eof encountered. Search counting is atomic, polled between iterations.
+ensembles into container iterated by beg until specified matches are found or eof encountered. Search counting is atomic.
 
 ### preprocess_pattern
 ```cpp
