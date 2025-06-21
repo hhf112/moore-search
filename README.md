@@ -165,7 +165,7 @@ success         beg translated by number of matches found
 fail            {}
 ```
 Allocates partitions of the `text` to `search` threads. Appends all matches found first into local containers for threads then
-ensembles into container iterated by beg until specified matches are found or eof encountered
+ensembles into container iterated by beg until specified matches are found or eof encountered. Search counting is atomic, polled between iterations.
 
 ### preprocess_pattern
 ```cpp
